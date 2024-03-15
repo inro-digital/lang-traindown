@@ -1,5 +1,3 @@
-@external propSource highlighting from "./highlight.js"
-
 @top File { (Note | Date | MetaKey | Set | Rep | Failure | Movement | Load)+ }
 
 @skip { space }
