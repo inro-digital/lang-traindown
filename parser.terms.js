@@ -11,6 +11,7 @@ export const
   Rep = 9,
   Set = 10,
   Failure = 11,
-  Meta = 12,
-  MetaName = 13,
-  MetaValue = 14
+  SuperSetMovementName = 12,
+  Meta = 13,
+  MetaName = 14,
+  MetaValue = 15

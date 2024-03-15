@@ -6,9 +6,10 @@ Meta { MetaName MetaValue (eof | newline) }
 Note { NoteValue (eof | newline) }
 Date { DateValue (eof | newline) }
 
-Movement {
-  MovementName (Load | Rep | Set | Failure | newline)+
-}
+Movement {(
+  (MovementName (Load | Rep | Set | Failure | newline)+)
+  | (SuperSetMovementName (Load | Rep | Set | Failure | newline)+)
+)}
 
 @tokens {
   space { $[\t ]+ }
@@ -19,6 +20,7 @@ Movement {
   MetaValue { $[a-zA-Z_]+ }
 
   MovementName { $[a-zA-Z_]+ ":" }
+  SuperSetMovementName { "+" $[a-zA-Z_]+ ":" }
   Load { $[0-9.bBwW+]+@whitespace }
   Rep { $[0-9.]+$[rR] }
   Set { $[0-9.]+$[sS] }

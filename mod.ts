@@ -16,6 +16,7 @@ const parserWithMetadata = parser.configure({
       MetaKey: tags.meta,
       MetaValue: tags.meta,
       MovementName: tags.heading,
+      SuperSetMovementName: tags.heading,
       Load: tags.strong,
       Rep: tags.number,
       Set: tags.string,

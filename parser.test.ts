@@ -10,7 +10,7 @@ Deno.test('basic parsing', () => {
       Squat:
         500 10r 5s 3F
         100 2r
-      Pullups: bw+20
+        +Pullups: bw+20
     `).toString(),
     `
       File(
@@ -19,7 +19,7 @@ Deno.test('basic parsing', () => {
         Note(NoteValue),
         Meta(MetaName,MetaValue),
         Movement(MovementName,Load,Rep,Set,Failure,Load,Rep),
-        Movement(MovementName,Load)
+        Movement(SuperSetMovementName,Load)
       )
       `.replace(/(\n|\s)/g, ''),
   )
