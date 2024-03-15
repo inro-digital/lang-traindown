@@ -1,0 +1,9 @@
+{
+  "tasks": {
+    "build": "deno run --allow-read --allow-write npm:@lezer/generator@1.7.0 ./traindown.grammar -o ./parser.js"
+  },
+  "imports": {
+    "@lezer/lr": "npm:@lezer/lr",
+    "@lezer/highlight": "npm:@lezer/highlight"
+  }
+}

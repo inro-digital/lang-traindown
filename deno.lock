@@ -1,0 +1,42 @@
+{
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "npm:@lezer/generator@1.7.0": "npm:@lezer/generator@1.7.0",
+      "npm:@lezer/highlight": "npm:@lezer/highlight@1.2.0",
+      "npm:@lezer/lr": "npm:@lezer/lr@1.4.0"
+    },
+    "npm": {
+      "@lezer/common@1.2.1": {
+        "integrity": "sha512-yemX0ZD2xS/73llMZIK6KplkjIjf2EvAHcinDi/TfJ9hS25G0388+ClHt6/3but0oOxinTcQHJLDXh6w1crzFQ==",
+        "dependencies": {}
+      },
+      "@lezer/generator@1.7.0": {
+        "integrity": "sha512-IJ16tx3biLKlCXUzcK4v8S10AVa2BSM2rB12rtAL6f1hL2TS/HQQlGCoWRvanlL2J4mCYEEIv9uG7n4kVMkVDA==",
+        "dependencies": {
+          "@lezer/common": "@lezer/common@1.2.1",
+          "@lezer/lr": "@lezer/lr@1.4.0"
+        }
+      },
+      "@lezer/highlight@1.2.0": {
+        "integrity": "sha512-WrS5Mw51sGrpqjlh3d4/fOwpEV2Hd3YOkp9DBt4k8XZQcoTHZFB7sx030A6OcahF4J1nDQAa3jXlTVVYH50IFA==",
+        "dependencies": {
+          "@lezer/common": "@lezer/common@1.2.1"
+        }
+      },
+      "@lezer/lr@1.4.0": {
+        "integrity": "sha512-Wst46p51km8gH0ZUmeNrtpRYmdlRHUpN1DQd3GFAyKANi8WVz8c2jHYTf1CVScFaCjQw1iO3ZZdqGDxQPRErTg==",
+        "dependencies": {
+          "@lezer/common": "@lezer/common@1.2.1"
+        }
+      }
+    }
+  },
+  "remote": {},
+  "workspace": {
+    "dependencies": [
+      "npm:@lezer/highlight",
+      "npm:@lezer/lr"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+@external propSource highlighting from "./highlight.js"
+
+@top File { (Note | Date | MetaKey | Set | Rep | Failure | Movement | Load)+ }
+
+@skip { space }
+
+@tokens {
+  space { @whitespace+ }
+
+  Movement { $[a-zA-Z_]+$[:] }
+  Failure { $[0-9]+$[fF] }
+  Rep { $[0-9]+$[rR] }
+  Set { $[0-9]+$[sS] }
+  Load { $[0-9]+@whitespace }
+
+  Note { "*" ![\n]* }
+  Date { "@" ![\n]* }
+  MetaKey { "#" ![\n]* }
+}
