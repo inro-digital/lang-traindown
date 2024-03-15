@@ -5,7 +5,7 @@
     "strict": true,
     "useUnknownInCatchVariables": true,
     "noImplicitOverride": true,
-    "lib": ["dom", "es2023"]
+    "lib": ["dom", "es2023", "deno.ns"]
   },
   "tasks": {
     "build": "deno run --allow-read --allow-write npm:@lezer/generator@1.7.0 ./traindown.grammar -o ./parser.js"
@@ -17,10 +17,11 @@
     "exclude": ["./parser.js", "parser.terms.js"]
   },
   "imports": {
+    "@codemirror/language": "npm:@codemirror/language",
     "@lezer/lr": "npm:@lezer/lr",
     "@lezer/highlight": "npm:@lezer/highlight"
   },
   "exports": {
-    ".": "./traindown.ts"
+    ".": "./mod.ts"
   }
 }

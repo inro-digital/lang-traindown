@@ -2,9 +2,10 @@ import {
   foldInside,
   foldNodeProp,
   indentNodeProp,
-} from 'npm:@codemirror/language'
-import { styleTags, tags } from 'npm:@lezer/highlight'
-import { LanguageSupport, LRLanguage } from 'npm:@codemirror/language'
+  LanguageSupport,
+  LRLanguage,
+} from '@codemirror/language'
+import { styleTags, tags } from '@lezer/highlight'
 import { parser } from './parser.js'
 
 const parserWithMetadata = parser.configure({
