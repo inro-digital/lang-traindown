@@ -2,10 +2,15 @@
 export const
   File = 1,
   Note = 2,
-  Date = 3,
-  MetaKey = 4,
-  Set = 5,
-  Rep = 6,
-  Failure = 7,
-  Movement = 8,
-  Load = 9
+  NoteValue = 3,
+  Date = 4,
+  DateValue = 5,
+  Movement = 6,
+  MovementName = 7,
+  Load = 8,
+  Rep = 9,
+  Set = 10,
+  Failure = 11,
+  Meta = 12,
+  MetaName = 13,
+  MetaValue = 14

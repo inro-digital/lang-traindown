@@ -7,9 +7,6 @@
     "noImplicitOverride": true,
     "lib": ["dom", "es2023", "deno.ns"]
   },
-  "tasks": {
-    "build": "deno run --allow-read --allow-write npm:@lezer/generator@1.7.0 ./traindown.grammar -o ./parser.js"
-  },
   "fmt": {
     "proseWrap": "never",
     "singleQuote": true,
@@ -23,5 +20,9 @@
   },
   "exports": {
     ".": "./mod.ts"
+  },
+  "tasks": {
+    "build": "deno run --allow-read --allow-write npm:@lezer/generator@1.7.0 ./traindown.grammar -o ./parser.js",
+    "test": "deno fmt && deno lint && deno task build && deno test"
   }
 }

@@ -11,11 +11,11 @@ import { parser } from './parser.js'
 const parserWithMetadata = parser.configure({
   props: [
     styleTags({
-      Note: tags.lineComment,
-      Date: tags.string,
+      NoteValue: tags.lineComment,
+      DateValue: tags.string,
       MetaKey: tags.meta,
-
-      Movement: tags.heading,
+      MetaValue: tags.meta,
+      MovementName: tags.heading,
       Load: tags.strong,
       Rep: tags.number,
       Set: tags.string,

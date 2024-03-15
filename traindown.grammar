@@ -1,17 +1,29 @@
-@top File { (Note | Date | MetaKey | Set | Rep | Failure | Movement | Load)+ }
+@top File { (Note | Date | Movement | Meta)+ }
 
 @skip { space }
 
+Meta { MetaName MetaValue (eof | newline) }
+Note { NoteValue (eof | newline) }
+Date { DateValue (eof | newline) }
+
+Movement {
+  MovementName (Load | Rep | Set | Failure | newline)+
+}
+
 @tokens {
-  space { @whitespace+ }
+  space { $[\t ]+ }
+  newline { $[\n;] }
+  eof { @eof }
 
-  Movement { $[a-zA-Z_]+$[:] }
-  Failure { $[0-9]+$[fF] }
-  Rep { $[0-9]+$[rR] }
-  Set { $[0-9]+$[sS] }
-  Load { $[0-9]+@whitespace }
+  MetaName { "#" $[a-zA-Z_0-9. ?]+ ":" }
+  MetaValue { $[a-zA-Z_]+ }
 
-  Note { "*" ![\n]* }
-  Date { "@" ![\n]* }
-  MetaKey { "#" ![\n]* }
+  MovementName { $[a-zA-Z_]+ ":" }
+  Load { $[0-9.bBwW+]+@whitespace }
+  Rep { $[0-9.]+$[rR] }
+  Set { $[0-9.]+$[sS] }
+  Failure { $[0-9.]+$[fF] }
+
+  NoteValue { "*" ![\n]* }
+  DateValue { "@" ![\n]* }
 }
