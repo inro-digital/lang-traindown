@@ -14,15 +14,16 @@
     "exclude": ["./parser.js", "parser.terms.js"]
   },
   "imports": {
-    "@codemirror/language": "npm:@codemirror/language",
-    "@lezer/lr": "npm:@lezer/lr",
-    "@lezer/highlight": "npm:@lezer/highlight"
+    "@codemirror/language": "npm:@codemirror/language@6.10.1",
+    "@lezer/lr": "npm:@lezer/lr@1.4.0",
+    "@lezer/highlight": "npm:@lezer/highlight@1.2.0"
   },
   "exports": {
     ".": "./mod.ts"
   },
   "tasks": {
     "build": "deno run --allow-read --allow-write npm:@lezer/generator@1.7.0 ./traindown.grammar -o ./parser.js",
+    "start": "deno run --allow-net --allow-read https://deno.land/std/http/file_server.ts .",
     "test": "deno fmt && deno lint && deno task build && deno test"
   }
 }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Traindown Codemirror</title>
+  <style>
+    * {
+      font-family: 'Courier Next', courier, monospace;
+    }
+    body, a {
+      background-color: rgb(40, 44, 52);
+      color: rgb(171, 178, 191);
+    }
+  </style>
+</head>
+<body>
+  <h1>Traindown Codemirror</h1>
+  <p>Syntax highlighting for <a href="https://traindown.com">traindown</a></p>
+  <script type="module">
+    import { basicSetup, EditorView } from "https://esm.sh/codemirror?target=es2020"
+    import { traindown } from "https://esm.sh/jsr/@inro/lang-traindown?target=es2020"
+    import { oneDark } from "https://esm.sh/@codemirror/theme-one-dark?target=es2020"
+
+    const doc = `@ Dec 25 2019 8:03am
+
+# Week: 2
+# Day: 4
+# Burritos: 3
+# Unit: lbs
+
+* Definitely should have stopped at two burritos.
+
+Squat:
+
+  * Worked on trying to increase interabdominal pressure, but not too much considering the burritos.
+  * Grip was pinky on the rings.
+
+  135 10r 2s
+  225 5r
+  315 5r
+  405 2r
+    * Had to stop at two reps to run to the bathroom.
+  455
+  500 3s
+    * Surprisingly easy singles given that episode at 405.
+    * Consider going up in weight next week.
+
+Kettlebell: 24 10r 4s
+  # Unit: kg
+
+Dips:
+  bw 10r
+  bw+25 10r
+  bw+50 10r
+  bw 20r
+    `
+
+    new EditorView({
+      extensions: [basicSetup, traindown(), oneDark],
+      parent: document.body,
+      doc
+    })
+  </script>
+</body>
+</html>
