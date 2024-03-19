@@ -1,6 +1,10 @@
 # Traindown Codemirror
 
+[![JSR Version](https://jsr.io/badges/@inro/lang-traindown?v=bust)](https://jsr.io/@inro/lang-traindown) [![JSR Score](https://jsr.io/badges/@inro/lang-traindown/score?v=bust)](https://jsr.io/@inro/lang-traindown/score)
+
 Syntax Highlighting for [traindown](https://traindown.com)
+
+Check out the [example](https://inro-digital.github.io/lang-traindown/)
 
 <img alt="screenshot of the syntax highlighting" src="./screenshot.png" />
 

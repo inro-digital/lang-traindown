@@ -1,6 +1,6 @@
 {
   "name": "@inro/lang-traindown",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "compilerOptions": {
     "strict": true,
     "useUnknownInCatchVariables": true,
