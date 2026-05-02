@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Traindown Codemirror</title>
-  <style>
-    * {
-      font-family: 'Courier Next', courier, monospace;
-    }
-    body, a {
-      background-color: rgb(40, 44, 52);
-      color: rgb(171, 178, 191);
-    }
-  </style>
-</head>
-<body>
-  <h1>Traindown Codemirror</h1>
-  <p>Syntax highlighting for <a href="https://traindown.com">traindown</a></p>
-  <script type="module">
-    import { basicSetup, EditorView } from "https://esm.sh/codemirror?target=es2020"
-    import { traindown } from "https://esm.sh/jsr/@inro/lang-traindown?target=es2020"
-    import { oneDark } from "https://esm.sh/@codemirror/theme-one-dark?target=es2020"
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Traindown Codemirror</title>
+    <style>
+      * {
+        font-family: 'Courier Next', courier, monospace;
+      }
+      body, a {
+        background-color: rgb(40, 44, 52);
+        color: rgb(171, 178, 191);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Traindown Codemirror</h1>
+    <p>Syntax highlighting for <a href="https://traindown.com">traindown</a></p>
+    <script type="module">
+      import {
+        basicSetup,
+        EditorView,
+      } from 'https://esm.sh/codemirror?target=es2020'
+      import { traindown } from 'https://esm.sh/jsr/@bpev/lang-traindown?target=es2020'
+      import { oneDark } from 'https://esm.sh/@codemirror/theme-one-dark?target=es2020'
 
-    const doc = `@ Dec 25 2019 8:03am
+      const doc = `@ Dec 25 2019 8:03am
 
 # Week: 2
 # Day: 4
@@ -56,11 +59,11 @@ Dips:
   bw 20r
     `
 
-    new EditorView({
-      extensions: [basicSetup, traindown(), oneDark],
-      parent: document.body,
-      doc
-    })
-  </script>
-</body>
+      new EditorView({
+        extensions: [basicSetup, traindown(), oneDark],
+        parent: document.body,
+        doc,
+      })
+    </script>
+  </body>
 </html>

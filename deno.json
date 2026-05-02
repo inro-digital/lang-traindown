@@ -1,5 +1,5 @@
 {
-  "name": "@inro/lang-traindown",
+  "name": "@bpev/lang-traindown",
   "version": "1.2.1",
   "compilerOptions": {
     "strict": true,
@@ -14,16 +14,17 @@
     "exclude": ["./parser.js", "parser.terms.js"]
   },
   "imports": {
-    "@codemirror/language": "npm:@codemirror/language@6.10.1",
-    "@lezer/lr": "npm:@lezer/lr@1.4.0",
-    "@lezer/highlight": "npm:@lezer/highlight@1.2.0"
+    "@codemirror/language": "npm:@codemirror/language@6.12.3",
+    "@lezer/lr": "npm:@lezer/lr@1.4.10",
+    "@lezer/highlight": "npm:@lezer/highlight@1.2.3",
+    "@std/assert": "jsr:@std/assert@^1.0.19"
   },
   "exports": {
     ".": "./mod.ts"
   },
   "tasks": {
-    "build": "deno run --allow-read --allow-write npm:@lezer/generator@1.7.0 ./traindown.grammar -o ./parser.js",
+    "build": "deno run --allow-env --allow-read --allow-write npm:@lezer/generator@1.7.0 ./traindown.grammar -o ./parser.js",
     "start": "deno run --allow-net --allow-read https://deno.land/std/http/file_server.ts .",
-    "test": "deno fmt && deno lint && deno task build && deno test"
+    "test": "deno fmt && deno lint && deno task build && deno test --allow-env"
   }
 }

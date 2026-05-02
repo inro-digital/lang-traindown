@@ -1,49 +1,104 @@
 {
-  "version": "3",
-  "packages": {
-    "specifiers": {
-      "jsr:@std/assert": "jsr:@std/assert@0.219.1",
-      "jsr:@std/fmt@^0.219.1": "jsr:@std/fmt@0.219.1",
-      "npm:@lezer/generator@1.7.0": "npm:@lezer/generator@1.7.0",
-      "npm:@lezer/lr@1.4.0": "npm:@lezer/lr@1.4.0"
+  "version": "5",
+  "specifiers": {
+    "jsr:@std/assert@*": "0.219.1",
+    "jsr:@std/assert@^1.0.19": "1.0.19",
+    "jsr:@std/fmt@~0.219.1": "0.219.1",
+    "jsr:@std/internal@^1.0.12": "1.0.13",
+    "npm:@codemirror/language@6.12.3": "6.12.3",
+    "npm:@lezer/generator@1.7.0": "1.7.0",
+    "npm:@lezer/highlight@1.2.3": "1.2.3",
+    "npm:@lezer/lr@1.4.10": "1.4.10"
+  },
+  "jsr": {
+    "@std/assert@0.219.1": {
+      "integrity": "e76c2a1799a78f0f4db7de04bdc9b908a7a4b821bb65eda0285885297d4fb8af",
+      "dependencies": [
+        "jsr:@std/fmt"
+      ]
     },
-    "jsr": {
-      "@std/assert@0.219.1": {
-        "integrity": "e76c2a1799a78f0f4db7de04bdc9b908a7a4b821bb65eda0285885297d4fb8af",
-        "dependencies": [
-          "jsr:@std/fmt@^0.219.1"
-        ]
-      },
-      "@std/fmt@0.219.1": {
-        "integrity": "2432152e927df249a207177aa048a6d9465956ea0047653ee6abd4f514db504f"
-      }
+    "@std/assert@1.0.19": {
+      "integrity": "eaada96ee120cb980bc47e040f82814d786fe8162ecc53c91d8df60b8755991e",
+      "dependencies": [
+        "jsr:@std/internal"
+      ]
     },
-    "npm": {
-      "@lezer/common@1.2.1": {
-        "integrity": "sha512-yemX0ZD2xS/73llMZIK6KplkjIjf2EvAHcinDi/TfJ9hS25G0388+ClHt6/3but0oOxinTcQHJLDXh6w1crzFQ==",
-        "dependencies": {}
-      },
-      "@lezer/generator@1.7.0": {
-        "integrity": "sha512-IJ16tx3biLKlCXUzcK4v8S10AVa2BSM2rB12rtAL6f1hL2TS/HQQlGCoWRvanlL2J4mCYEEIv9uG7n4kVMkVDA==",
-        "dependencies": {
-          "@lezer/common": "@lezer/common@1.2.1",
-          "@lezer/lr": "@lezer/lr@1.4.0"
-        }
-      },
-      "@lezer/lr@1.4.0": {
-        "integrity": "sha512-Wst46p51km8gH0ZUmeNrtpRYmdlRHUpN1DQd3GFAyKANi8WVz8c2jHYTf1CVScFaCjQw1iO3ZZdqGDxQPRErTg==",
-        "dependencies": {
-          "@lezer/common": "@lezer/common@1.2.1"
-        }
-      }
+    "@std/fmt@0.219.1": {
+      "integrity": "2432152e927df249a207177aa048a6d9465956ea0047653ee6abd4f514db504f"
+    },
+    "@std/internal@1.0.13": {
+      "integrity": "2f9546691d4ac2d32859c82dff284aaeac980ddeca38430d07941e7e288725c0"
     }
   },
-  "remote": {},
+  "npm": {
+    "@codemirror/language@6.12.3": {
+      "integrity": "sha512-QwCZW6Tt1siP37Jet9Tb02Zs81TQt6qQrZR2H+eGMcFsL1zMrk2/b9CLC7/9ieP1fjIUMgviLWMmgiHoJrj+ZA==",
+      "dependencies": [
+        "@codemirror/state",
+        "@codemirror/view",
+        "@lezer/common",
+        "@lezer/highlight",
+        "@lezer/lr",
+        "style-mod"
+      ]
+    },
+    "@codemirror/state@6.6.0": {
+      "integrity": "sha512-4nbvra5R5EtiCzr9BTHiTLc+MLXK2QGiAVYMyi8PkQd3SR+6ixar/Q/01Fa21TBIDOZXgeWV4WppsQolSreAPQ==",
+      "dependencies": [
+        "@marijn/find-cluster-break"
+      ]
+    },
+    "@codemirror/view@6.41.1": {
+      "integrity": "sha512-ToDnWKbBnke+ZLrP6vgTTDScGi5H37YYuZGniQaBzxMVdtCxMrslsmtnOvbPZk4RX9bvkQqnWR/WS/35tJA0qg==",
+      "dependencies": [
+        "@codemirror/state",
+        "crelt",
+        "style-mod",
+        "w3c-keyname"
+      ]
+    },
+    "@lezer/common@1.5.2": {
+      "integrity": "sha512-sxQE460fPZyU3sdc8lafxiPwJHBzZRy/udNFynGQky1SePYBdhkBl1kOagA9uT3pxR8K09bOrmTUqA9wb/PjSQ=="
+    },
+    "@lezer/generator@1.7.0": {
+      "integrity": "sha512-IJ16tx3biLKlCXUzcK4v8S10AVa2BSM2rB12rtAL6f1hL2TS/HQQlGCoWRvanlL2J4mCYEEIv9uG7n4kVMkVDA==",
+      "dependencies": [
+        "@lezer/common",
+        "@lezer/lr"
+      ],
+      "bin": true
+    },
+    "@lezer/highlight@1.2.3": {
+      "integrity": "sha512-qXdH7UqTvGfdVBINrgKhDsVTJTxactNNxLk7+UMwZhU13lMHaOBlJe9Vqp907ya56Y3+ed2tlqzys7jDkTmW0g==",
+      "dependencies": [
+        "@lezer/common"
+      ]
+    },
+    "@lezer/lr@1.4.10": {
+      "integrity": "sha512-rnCpTIBafOx4mRp43xOxDJbFipJm/c0cia/V5TiGlhmMa+wsSdoGmUN3w5Bqrks/09Q/D4tNAmWaT8p6NRi77A==",
+      "dependencies": [
+        "@lezer/common"
+      ]
+    },
+    "@marijn/find-cluster-break@1.0.2": {
+      "integrity": "sha512-l0h88YhZFyKdXIFNfSWpyjStDjGHwZ/U7iobcK1cQQD8sejsONdQtTVU+1wVN1PBw40PiiHB1vA5S7VTfQiP9g=="
+    },
+    "crelt@1.0.6": {
+      "integrity": "sha512-VQ2MBenTq1fWZUH9DJNGti7kKv6EeAuYr3cLwxUWhIu1baTaXh4Ib5W2CqHVqib4/MqbYGJqiL3Zb8GJZr3l4g=="
+    },
+    "style-mod@4.1.3": {
+      "integrity": "sha512-i/n8VsZydrugj3Iuzll8+x/00GH2vnYsk1eomD8QiRrSAeW6ItbCQDtfXCeJHd0iwiNagqjQkvpvREEPtW3IoQ=="
+    },
+    "w3c-keyname@2.2.8": {
+      "integrity": "sha512-dpojBhNsCNN7T82Tm7k26A6G9ML3NkhDsnw9n/eoxSRlVBB4CEtIQ/KTCLI2Fwf3ataSXRhYFkQi3SlnFwPvPQ=="
+    }
+  },
   "workspace": {
     "dependencies": [
-      "npm:@codemirror/language@6.10.1",
-      "npm:@lezer/highlight@1.2.0",
-      "npm:@lezer/lr@1.4.0"
+      "jsr:@std/assert@^1.0.19",
+      "npm:@codemirror/language@6.12.3",
+      "npm:@lezer/highlight@1.2.3",
+      "npm:@lezer/lr@1.4.10"
     ]
   }
 }

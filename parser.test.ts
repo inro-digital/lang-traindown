@@ -1,4 +1,4 @@
-import { assertEquals } from 'jsr:@std/assert'
+import { assertEquals } from '@std/assert'
 import { parser } from './parser.js'
 
 Deno.test('basic parsing', () => {
